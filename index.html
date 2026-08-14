@@ -5,6 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Marcus Brew Ashmond — Backend &amp; Full-Stack Engineer</title>
 <meta name="description" content="Marcus Brew Ashmond. Backend and full-stack software engineer. Distributed systems, event-driven architecture, and health data interoperability." />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22><rect width=%2232%22 height=%2232%22 rx=%224%22 fill=%22%2312181F%22/><text x=%2216%22 y=%2222%22 font-family=%22monospace%22 font-size=%2216%22 font-weight=%22600%22 fill=%22%230E7C86%22 text-anchor=%22middle%22>M</text></svg>" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Marcus Brew Ashmond — Backend &amp; Full-Stack Engineer" />
+<meta property="og:description" content="Backend and full-stack software engineer. Distributed systems, event-driven architecture, and health data interoperability." />
+<meta property="og:url" content="https://marcus-portfolio-five.vercel.app" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Marcus Brew Ashmond — Backend &amp; Full-Stack Engineer" />
+<meta name="twitter:description" content="Backend and full-stack software engineer. Distributed systems, event-driven architecture, and health data interoperability." />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -262,6 +270,16 @@
     display:flex;
     flex-direction:column;
   }
+  .card-shot{
+    width:100%;
+    aspect-ratio:16/10;
+    object-fit:cover;
+    object-position:top;
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    margin-bottom:14px;
+    display:block;
+  }
   .card-title{
     font-family:'Space Grotesk', sans-serif;
     font-weight:600;
@@ -398,6 +416,7 @@
 
     <div class="hero-links">
       <a class="btn primary" href="mailto:mashmond@student.umgc.edu">Email me</a>
+      <a class="btn" href="resume.pdf" target="_blank" rel="noopener">Resume</a>
       <a class="btn" href="https://www.linkedin.com/in/marcus-ashmond-cybersecurity" target="_blank" rel="noopener">LinkedIn</a>
       <a class="btn" href="https://github.com/marcusashmond" target="_blank" rel="noopener">GitHub</a>
     </div>
@@ -468,6 +487,7 @@
     </div>
     <div class="projects">
       <div class="card">
+        <img class="card-shot" src="finsight-screenshot.png" alt="FinSight dashboard showing budget tracking and spending charts" loading="lazy" />
         <div class="card-title">FinSight</div>
         <div class="card-stack">React · Node.js · MongoDB · JWT · Vercel</div>
         <p>A full-stack personal finance dashboard with budget tracking, transaction management, net worth goals, CSV upload, and dark mode. Deployed live with progressive feature delivery from MVP through production.</p>
