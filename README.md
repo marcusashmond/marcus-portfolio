@@ -1,19 +1,15 @@
-# Portfolio site
+# Marcus Brew Ashmond — Portfolio
 
-A single static HTML file — no build step required.
+Backend & full-stack engineer. Distributed systems, event-driven architecture, and health data interoperability.
 
-## Deploy to Vercel
+**Live site:** [marcus-portfolio-five.vercel.app](https://marcus-portfolio-five.vercel.app)
 
-1. Create a new GitHub repo (e.g. `marcus-portfolio`) and push this folder to it,
-   or drag-and-drop the folder directly at vercel.com/new.
-2. In Vercel, click "Add New Project," import the repo (or upload the folder).
-3. Framework preset: choose "Other" — no build command or output directory needed,
-   since it's a plain `index.html`.
-4. Click Deploy. Vercel will give you a live `.vercel.app` URL immediately, and you
-   can attach a custom domain afterward under Project Settings → Domains.
+## About
 
-## Editing later
+Single static HTML file — no build step, no dependencies. Covers experience (Betika, Cognizant, Vien Health),
+projects ([FinSight](https://github.com/marcusashmond/FinSight), FHIR health data service), skills, and certifications.
 
-Everything (markup, styles, content) lives in `index.html`. No dependencies to install.
-Open it in any editor, change the text or links, and redeploy by pushing to the repo
-(Vercel auto-redeploys on push) or re-uploading the folder.
+## Editing
+
+Everything lives in `index.html`. Open it in any editor, change the content, and push — Vercel auto-deploys
+on push to `main`.
