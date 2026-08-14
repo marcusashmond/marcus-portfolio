@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Marcus Brew Ashmond — Backend &amp; Full-Stack Engineer</title>
+<meta name="description" content="Marcus Brew Ashmond. Backend and full-stack software engineer. Distributed systems, event-driven architecture, and health data interoperability." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#FFFFFF;
+    --surface:#F4F6F5;
+    --surface-2:#EDF0EE;
+    --ink:#12181F;
+    --muted:#5B6472;
+    --line:#E2E5E3;
+    --teal:#0E7C86;
+    --teal-dim:#0E7C8614;
+    --amber:#C2410C;
+    --amber-dim:#C2410C14;
+    --radius:2px;
+    --maxw:820px;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important;}
+  }
+
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'Inter', sans-serif;
+    font-size:16px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  a{color:inherit;}
+
+  .wrap{
+    max-width:var(--maxw);
+    margin:0 auto;
+    padding:0 28px;
+  }
+
+  /* ---------- Nav ---------- */
+  nav{
+    position:sticky; top:0; z-index:10;
+    background:rgba(255,255,255,0.88);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line);
+  }
+  nav .wrap{
+    display:flex; align-items:center; justify-content:space-between;
+    padding-top:16px; padding-bottom:16px;
+  }
+  .nav-mark{
+    font-family:'Space Grotesk', sans-serif;
+    font-weight:600;
+    font-size:15px;
+    letter-spacing:0.01em;
+  }
+  .nav-links{
+    display:flex; gap:22px;
+    font-family:'JetBrains Mono', monospace;
+    font-size:12.5px;
+    letter-spacing:0.02em;
+  }
+  .nav-links a{
+    text-decoration:none;
+    color:var(--muted);
+    border-bottom:1px solid transparent;
+    padding-bottom:2px;
+    transition:color 0.15s ease, border-color 0.15s ease;
+  }
+  .nav-links a:hover, .nav-links a:focus-visible{
+    color:var(--teal);
+    border-color:var(--teal);
+  }
+
+  /* ---------- Hero ---------- */
+  header.hero{
+    padding:72px 0 56px;
+    border-bottom:1px solid var(--line);
+  }
+  .eyebrow{
+    font-family:'JetBrains Mono', monospace;
+    font-size:12.5px;
+    color:var(--teal);
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    margin-bottom:18px;
+    display:flex; align-items:center; gap:9px;
+  }
+  .pulse-dot{
+    width:7px; height:7px; border-radius:50%;
+    background:var(--teal);
+    box-shadow:0 0 0 0 var(--teal-dim);
+    animation:pulse 2.4s ease-in-out infinite;
+    flex:none;
+  }
+  @keyframes pulse{
+    0%{box-shadow:0 0 0 0 rgba(14,124,134,0.35);}
+    70%{box-shadow:0 0 0 8px rgba(14,124,134,0);}
+    100%{box-shadow:0 0 0 0 rgba(14,124,134,0);}
+  }
+
+  h1{
+    font-family:'Space Grotesk', sans-serif;
+    font-weight:700;
+    font-size:clamp(34px, 5vw, 48px);
+    line-height:1.08;
+    margin:0 0 10px;
+    letter-spacing:-0.01em;
+  }
+  .role{
+    font-size:18px;
+    color:var(--muted);
+    margin:0 0 30px;
+    max-width:520px;
+  }
+
+  /* status strip: signature element */
+  .status-strip{
+    display:flex;
+    flex-wrap:wrap;
+    gap:0;
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    overflow:hidden;
+    margin-bottom:32px;
+  }
+  .status-item{
+    flex:1 1 150px;
+    padding:14px 18px;
+    border-right:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+  }
+  .status-item:last-child{border-right:none;}
+  .status-value{
+    font-family:'JetBrains Mono', monospace;
+    font-weight:500;
+    font-size:19px;
+    color:var(--amber);
+  }
+  .status-label{
+    font-size:12px;
+    color:var(--muted);
+    margin-top:3px;
+    text-transform:uppercase;
+    letter-spacing:0.04em;
+  }
+
+  .hero-links{
+    display:flex; flex-wrap:wrap; gap:10px;
+  }
+  .btn{
+    font-family:'JetBrains Mono', monospace;
+    font-size:13px;
+    text-decoration:none;
+    padding:10px 16px;
+    border-radius:var(--radius);
+    border:1px solid var(--ink);
+    color:var(--ink);
+    transition:background 0.15s ease, color 0.15s ease;
+  }
+  .btn:hover, .btn:focus-visible{
+    background:var(--ink);
+    color:var(--bg);
+  }
+  .btn.primary{
+    background:var(--teal);
+    border-color:var(--teal);
+    color:#fff;
+  }
+  .btn.primary:hover, .btn.primary:focus-visible{
+    background:#0B6169;
+    border-color:#0B6169;
+    color:#fff;
+  }
+
+  /* ---------- Sections ---------- */
+  section{
+    padding:56px 0;
+    border-bottom:1px solid var(--line);
+  }
+  section:last-of-type{border-bottom:none;}
+
+  .section-head{
+    display:flex;
+    align-items:baseline;
+    gap:12px;
+    margin-bottom:28px;
+  }
+  .section-num{
+    font-family:'JetBrains Mono', monospace;
+    font-size:12.5px;
+    color:var(--muted);
+  }
+  h2{
+    font-family:'Space Grotesk', sans-serif;
+    font-size:22px;
+    font-weight:600;
+    margin:0;
+    letter-spacing:-0.005em;
+  }
+
+  .lede{
+    max-width:620px;
+    color:var(--ink);
+  }
+  .lede + .lede{margin-top:14px;}
+
+  /* ---------- Experience ---------- */
+  .job{
+    padding:22px 0;
+    border-top:1px solid var(--line);
+  }
+  .job:first-of-type{border-top:none; padding-top:0;}
+  .job-head{
+    display:flex; justify-content:space-between; flex-wrap:wrap; gap:6px 20px;
+    margin-bottom:6px;
+  }
+  .job-title{
+    font-weight:600; font-size:16px;
+  }
+  .job-meta{
+    font-family:'JetBrains Mono', monospace;
+    font-size:12.5px;
+    color:var(--muted);
+    white-space:nowrap;
+  }
+  .job ul{
+    margin:10px 0 0;
+    padding-left:18px;
+    color:var(--muted);
+  }
+  .job li{margin-bottom:6px;}
+  .job li b, .job li strong{color:var(--ink); font-weight:600;}
+
+  /* ---------- Projects ---------- */
+  .projects{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:18px;
+  }
+  @media (max-width:640px){
+    .projects{grid-template-columns:1fr;}
+  }
+  .card{
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:22px;
+    background:var(--surface);
+    display:flex;
+    flex-direction:column;
+  }
+  .card-title{
+    font-family:'Space Grotesk', sans-serif;
+    font-weight:600;
+    font-size:16.5px;
+    margin-bottom:8px;
+  }
+  .card-stack{
+    font-family:'JetBrains Mono', monospace;
+    font-size:11.5px;
+    color:var(--teal);
+    letter-spacing:0.02em;
+    margin-bottom:12px;
+  }
+  .card p{
+    color:var(--muted);
+    font-size:14.5px;
+    margin:0 0 16px;
+    flex-grow:1;
+  }
+  .card-links{
+    display:flex; gap:14px;
+    font-family:'JetBrains Mono', monospace;
+    font-size:12.5px;
+  }
+  .card-links a{
+    text-decoration:none;
+    color:var(--ink);
+    border-bottom:1px solid var(--ink);
+    padding-bottom:1px;
+  }
+  .card-links a:hover, .card-links a:focus-visible{color:var(--teal); border-color:var(--teal);}
+
+  /* ---------- Skills ---------- */
+  .skill-row{
+    display:grid;
+    grid-template-columns:170px 1fr;
+    gap:8px 20px;
+    padding:12px 0;
+    border-top:1px solid var(--line);
+    align-items:baseline;
+  }
+  .skill-row:first-of-type{border-top:none;}
+  .skill-cat{
+    font-family:'JetBrains Mono', monospace;
+    font-size:12.5px;
+    color:var(--muted);
+    text-transform:uppercase;
+    letter-spacing:0.03em;
+  }
+  .skill-vals{
+    font-size:14.5px;
+  }
+
+  /* ---------- Certifications ---------- */
+  .certs{
+    display:flex; flex-wrap:wrap; gap:10px;
+  }
+  .cert-chip{
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:9px 14px;
+    font-size:13.5px;
+    background:var(--surface);
+  }
+  .cert-chip b{
+    font-family:'JetBrains Mono', monospace;
+    color:var(--amber);
+    font-weight:500;
+  }
+
+  /* ---------- Footer ---------- */
+  footer{
+    padding:40px 0 60px;
+  }
+  footer .wrap{
+    display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:14px;
+  }
+  .footer-status{
+    font-family:'JetBrains Mono', monospace;
+    font-size:12px;
+    color:var(--muted);
+    display:flex; align-items:center; gap:8px;
+  }
+  .footer-links{
+    display:flex; gap:18px;
+    font-family:'JetBrains Mono', monospace;
+    font-size:12.5px;
+  }
+  .footer-links a{text-decoration:none; color:var(--ink); border-bottom:1px solid var(--ink);}
+  .footer-links a:hover{color:var(--teal); border-color:var(--teal);}
+
+  :focus-visible{outline:2px solid var(--teal); outline-offset:2px;}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <div class="nav-mark">M. ASHMOND</div>
+    <div class="nav-links">
+      <a href="#about">about</a>
+      <a href="#experience">experience</a>
+      <a href="#projects">projects</a>
+      <a href="#skills">skills</a>
+      <a href="#contact">contact</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow"><span class="pulse-dot"></span>open to new opportunities</div>
+    <h1>Marcus Brew Ashmond</h1>
+    <p class="role">Backend &amp; full-stack engineer building distributed systems that stay up — across fintech, healthtech, and health data interoperability.</p>
+
+    <div class="status-strip">
+      <div class="status-item">
+        <div class="status-value">35%</div>
+        <div class="status-label">latency reduced</div>
+      </div>
+      <div class="status-item">
+        <div class="status-value">90%</div>
+        <div class="status-label">fewer msg failures</div>
+      </div>
+      <div class="status-item">
+        <div class="status-value">5M+</div>
+        <div class="status-label">users served</div>
+      </div>
+      <div class="status-item">
+        <div class="status-value">3 yrs</div>
+        <div class="status-label">production experience</div>
+      </div>
+    </div>
+
+    <div class="hero-links">
+      <a class="btn primary" href="mailto:mashmond@student.umgc.edu">Email me</a>
+      <a class="btn" href="https://www.linkedin.com/in/marcus-ashmond-cybersecurity" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn" href="https://github.com/marcusashmond" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </div>
+</header>
+
+<section id="about">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-num">01</span>
+      <h2>About</h2>
+    </div>
+    <p class="lede">Full-stack and backend engineer with 3+ years of experience building and scaling distributed systems in production. I've shipped microservices handling millions of daily transactions, reduced API latency by 40%, and led engineering work across fintech, healthtech, and AI projects.</p>
+    <p class="lede">Comfortable across the stack — designing REST APIs and event-driven architectures in Go, building React frontends, and deploying containerized services on Kubernetes. Looking to own meaningful systems end to end and keep growing.</p>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-num">02</span>
+      <h2>Experience</h2>
+    </div>
+
+    <div class="job">
+      <div class="job-head">
+        <div class="job-title">Software Engineer, Betika <span style="color:var(--muted); font-weight:400;">— leading African fintech platform, 5M+ users</span></div>
+        <div class="job-meta">Remote, Kenya · Sep 2023 – Aug 2025</div>
+      </div>
+      <ul>
+        <li>Designed and deployed high-performance <b>Go</b> microservices handling millions of daily transactions, improving throughput by 35%.</li>
+        <li>Cut API latency 40% during peak traffic by overhauling <b>MySQL</b> indexing, query plans, and connection pooling.</li>
+        <li>Reduced message failures 90% with resilient <b>Kafka</b> consumer patterns, retry logic, and dead-letter queues.</li>
+        <li>Containerized services with <b>Docker</b> and <b>Kubernetes</b>, cutting release cycles 60% via CI/CD with zero-downtime rollouts.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-head">
+        <div class="job-title">Software Engineering Intern, Cognizant</div>
+        <div class="job-meta">Teaneck, NJ · Dec 2023 – Jan 2024</div>
+      </div>
+      <ul>
+        <li>Built <b>Flask</b> APIs integrated with <b>Azure OpenAI</b>, cutting document analysis time 65%.</li>
+        <li>Engineered a <b>React</b> and <b>TypeScript</b> front end with optimized state management, cutting query complexity 33%.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-head">
+        <div class="job-title">Full-Stack Developer, Vien Health</div>
+        <div class="job-meta">Remote, Ghana · Aug 2022 – Aug 2023</div>
+      </div>
+      <ul>
+        <li>Built a HIPAA-aware telemedicine platform supporting 1,000+ monthly video consultations with <b>Twilio WebRTC</b>, sub-300ms latency.</li>
+        <li>Designed secure RESTful APIs for scheduling, patient authentication, and EMR using <b>Node.js</b> and <b>MySQL</b>, improving clinical workflow efficiency 35%.</li>
+        <li>Implemented PCI-compliant payments via <b>Stripe</b>, handling $100,000+ in annual transactions with full audit logging.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-num">03</span>
+      <h2>Projects</h2>
+    </div>
+    <div class="projects">
+      <div class="card">
+        <div class="card-title">FinSight</div>
+        <div class="card-stack">React · Node.js · MongoDB · JWT · Vercel</div>
+        <p>A full-stack personal finance dashboard with budget tracking, transaction management, net worth goals, CSV upload, and dark mode. Deployed live with progressive feature delivery from MVP through production.</p>
+        <div class="card-links">
+          <a href="https://fin-sight-beta-eosin.vercel.app" target="_blank" rel="noopener">Live demo</a>
+          <a href="https://github.com/marcusashmond/FinSight" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-title">FHIR Health Data Interoperability Service</div>
+        <div class="card-stack">Go · PostgreSQL · Kafka · Docker · Kubernetes</div>
+        <p>A FHIR-compliant REST API for patient and clinical observation data, with a real-time Kafka pipeline that flags abnormal vital signs and HIPAA-aligned audit logging middleware for every access to protected health data.</p>
+        <div class="card-links">
+          <a href="https://github.com/marcusashmond/fhir-health-service" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-num">04</span>
+      <h2>Skills</h2>
+    </div>
+    <div class="skill-row">
+      <div class="skill-cat">Languages</div>
+      <div class="skill-vals">Go, Python, JavaScript, TypeScript, Java, C/C++, SQL</div>
+    </div>
+    <div class="skill-row">
+      <div class="skill-cat">Backend &amp; Architecture</div>
+      <div class="skill-vals">Microservices, REST APIs, gRPC, Event-Driven Systems, Distributed Systems, System Design</div>
+    </div>
+    <div class="skill-row">
+      <div class="skill-cat">Frameworks &amp; Tools</div>
+      <div class="skill-vals">React, Next.js, Node.js, Express.js, Flask, Kafka, RabbitMQ, Docker, Kubernetes</div>
+    </div>
+    <div class="skill-row">
+      <div class="skill-cat">Databases</div>
+      <div class="skill-vals">MySQL, MongoDB, Redis, PostgreSQL, DynamoDB</div>
+    </div>
+    <div class="skill-row">
+      <div class="skill-cat">Cloud &amp; DevOps</div>
+      <div class="skill-vals">AWS, Azure, GCP, Terraform, CI/CD, Linux, Vercel</div>
+    </div>
+  </div>
+</section>
+
+<section id="certifications">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-num">05</span>
+      <h2>Certifications</h2>
+    </div>
+    <div class="certs">
+      <div class="cert-chip"><b>AZ-500</b> — Microsoft Azure Security Engineer</div>
+      <div class="cert-chip"><b>Security+</b> — CompTIA</div>
+      <div class="cert-chip"><b>Network+</b> — CompTIA</div>
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="wrap">
+    <div class="footer-status"><span class="pulse-dot"></span>status: available for opportunities</div>
+    <div class="footer-links">
+      <a href="mailto:mashmond@student.umgc.edu">mashmond@student.umgc.edu</a>
+      <a href="https://www.linkedin.com/in/marcus-ashmond-cybersecurity" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/marcusashmond" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
